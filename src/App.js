@@ -1,23 +1,75 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Slider from './Slider';
 import './App.css';
 
 function App() {
+  const [numSlides, setNumSlides] = useState(3);
+  const [fullWidth, setFullWidth] = useState(false);
+  const [showArrows, setShowArrows] = useState(true);
+  const [showDots, setShowDots] = useState(true);
+  const [showThumbnails, setShowThumbnails] = useState(false);
+  const [generate, setGenerate] = useState(false);
+
+  const handleGenerateSlider = () => {
+    setGenerate(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Dynamic Slider</h1>
+      <div className="controls">
+        <label>
+          Number of Slides:
+          <input
+            type="number"
+            value={numSlides}
+            onChange={(e) => setNumSlides(e.target.value)}
+            min="1"
+          />
+        </label>
+        <label>
+          Full Width:
+          <input
+            type="checkbox"
+            checked={fullWidth}
+            onChange={(e) => setFullWidth(e.target.checked)}
+          />
+        </label>
+        <label>
+          Show Arrows:
+          <input
+            type="checkbox"
+            checked={showArrows}
+            onChange={(e) => setShowArrows(e.target.checked)}
+          />
+        </label>
+        <label>
+          Show Dots:
+          <input
+            type="checkbox"
+            checked={showDots}
+            onChange={(e) => setShowDots(e.target.checked)}
+          />
+        </label>
+        <label>
+          Show Thumbnails:
+          <input
+            type="checkbox"
+            checked={showThumbnails}
+            onChange={(e) => setShowThumbnails(e.target.checked)}
+          />
+        </label>
+        <button onClick={handleGenerateSlider}>Generate Slider</button>
+      </div>
+      {generate && (
+        <Slider
+          numSlides={numSlides}
+          fullWidth={fullWidth}
+          showArrows={showArrows}
+          showDots={showDots}
+          showThumbnails={showThumbnails}
+        />
+      )}
     </div>
   );
 }
