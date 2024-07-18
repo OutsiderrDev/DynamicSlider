@@ -16,10 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Dynamic Slider</h1>
+      <h1>Dynamiczny Slider</h1>
       <div className="controls">
         <label>
-          Number of Slides:
+          Ilość slajdów:
           <input
             type="number"
             value={numSlides}
@@ -28,7 +28,7 @@ function App() {
           />
         </label>
         <label>
-          Full Width:
+          Pełna szerokość:
           <input
             type="checkbox"
             checked={fullWidth}
@@ -36,7 +36,7 @@ function App() {
           />
         </label>
         <label>
-          Show Arrows:
+          Pokaż kontrolki:
           <input
             type="checkbox"
             checked={showArrows}
@@ -44,7 +44,7 @@ function App() {
           />
         </label>
         <label>
-          Show Dots:
+          Pokaż wskaźnik położenia:
           <input
             type="checkbox"
             checked={showDots}
@@ -52,14 +52,14 @@ function App() {
           />
         </label>
         <label>
-          Show Thumbnails:
+          Pokaż miniaturki:
           <input
             type="checkbox"
             checked={showThumbnails}
             onChange={(e) => setShowThumbnails(e.target.checked)}
           />
         </label>
-        <button onClick={handleGenerateSlider}>Generate Slider</button>
+        <button onClick={handleGenerateSlider} className='btn'>Wygeneruj slider</button>
       </div>
       {generate && (
         <Slider

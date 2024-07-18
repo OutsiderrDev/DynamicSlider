@@ -79,3 +79,18 @@
     border: 2px solid black;
   }
   
+  input{
+    text-align: center;
+  }
+
+  .btn{
+    margin-top: 2vh;
+    padding: 6px;
+    width: 8vw;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px 3px grey;
+    background-color: #149cf7;
+  }
